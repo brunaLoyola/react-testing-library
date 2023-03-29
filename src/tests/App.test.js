@@ -8,10 +8,10 @@ describe('Testando o componente <App.js />', () => {
   it('Deve testar se o primeiro link possui o texto Home e se quando ocorrer um click no link Home, a aplicação é redirecionada para a página inicial, na URL / ', () => {
     const { history } = renderWithRouter(<App />);
 
-    const HomeLink = screen.getByRole('link', { name: 'Home' });
-    expect(HomeLink).toBeInTheDocument();
+    const homeLink = screen.getByRole('link', { name: 'Home' });
+    expect(homeLink).toBeInTheDocument();
 
-    userEvent.click(HomeLink);
+    userEvent.click(homeLink);
 
     const { pathname } = history.location;
     expect(pathname).toBe('/');
@@ -19,10 +19,10 @@ describe('Testando o componente <App.js />', () => {
   it('Deve testar se o segundo link possui o texto About e se quando ocorrer um click no link About, a aplicação é redirecionada para a página de About, na URL /about ', () => {
     const { history } = renderWithRouter(<App />);
 
-    const AboutLink = screen.getByRole('link', { name: 'About' });
-    expect(AboutLink).toBeInTheDocument();
+    const aboutLink = screen.getByRole('link', { name: 'About' });
+    expect(aboutLink).toBeInTheDocument();
 
-    userEvent.click(AboutLink);
+    userEvent.click(aboutLink);
 
     const { pathname } = history.location;
     expect(pathname).toBe('/about');
@@ -30,10 +30,10 @@ describe('Testando o componente <App.js />', () => {
   it('Deve testar se o terceiro link possui o texto Favorite Pokémon e se quando ocorrer um click no link Favorite Pokémon, a aplicação é redirecionada para a página inicial, na URL /favorites', () => {
     const { history } = renderWithRouter(<App />);
 
-    const FavoritesLink = screen.getByRole('link', { name: 'Favorite Pokémon' });
-    expect(FavoritesLink).toBeInTheDocument();
+    const favoritesLink = screen.getByRole('link', { name: 'Favorite Pokémon' });
+    expect(favoritesLink).toBeInTheDocument();
 
-    userEvent.click(FavoritesLink);
+    userEvent.click(favoritesLink);
 
     const { pathname } = history.location;
     expect(pathname).toBe('/favorites');
